@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos de Nilza - Abril 2024</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .gasto-item {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .gasto-item:last-child {
+            border-bottom: none;
+        }
+        .valor {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .descricao {
+            margin: 5px 0;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gastos de Nilza - Abril 2024</h1>
+<div id="gastosFevereiro">
+    <div class="gasto-item"><div class="valor">R$ 131,33</div><div class="descricao">Enel (7/10)</div></div>
+    <div class="gasto-item"><div class="valor">R$ 74,99</div><div class="descricao">Tenis Renato (5/6)</div></div>
+    <div class="gasto-item"><div class="valor">R$ 113,32</div><div class="descricao">Nike Renato (4/6)</div></div>
+    <div class="gasto-item"><div class="valor">R$ 84,49</div><div class="descricao">Supermercado (3/3)</div></div>
+	<div class="gasto-item"><div class="valor">R$ 145,47</div><div class="descricao">NUBANK (12/12)</div></div>
+</div>
+
+		<div id="totalGastos">Total: R$ 0,00</div>
+        <a href="nilza.html" class="btn">Voltar</a>
+    </div>
+	<script>
+    window.onload = function() {
+        var itensDeGasto = document.querySelectorAll('.gasto-item .valor');
+        var total = 0;
+
+        itensDeGasto.forEach(function(item) {
+            var valorTexto = item.innerText.replace('R$ ', '').replace(',', '.');
+            var valor = parseFloat(valorTexto);
+            total += valor;
+        });
+
+        document.getElementById('totalGastos').innerText = 'Total: R$ ' + total.toFixed(2).replace('.', ',');
+    };
+</script>
+
+</body>
+</html>

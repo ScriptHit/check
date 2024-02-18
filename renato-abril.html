@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos de Renato - Março 2024</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .gasto-item {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .gasto-item:last-child {
+            border-bottom: none;
+        }
+        .valor {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .descricao {
+            margin: 5px 0;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+		        #modalPix {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Garantir que o modal esteja sobre outros elementos */
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            width: auto;
+            margin: auto;
+        }
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .close:hover {
+            color: #f00;
+        }
+        table {
+            margin-top: 20px;
+            width: auto;
+            border-collapse: collapse;
+            margin: auto; /* Centralizar tabela */
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        td {
+            background-color: #f0f2f5;
+        }
+        .btn {
+            margin-right: 10px; /* Espaçamento entre botões */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gastos de Renato - Março 2024</h1>
+        <div id="gastosFevereiro">
+            <!-- Exemplo de um item de gasto -->
+            <div class="gasto-item">
+                <div class="valor">R$ 119,99</div>
+                <div class="descricao">Nike (2/2)</div>
+            </div>			
+        </div>
+		<div id="totalGastos">Total: R$ 0,00</div>
+        <a href="renato.html" class="btn">Voltar</a>
+		<button id="pagarBtn" class="btn">Pagar</button> <!-- Botão de pagar -->
+    </div>
+
+    <!-- Modal para pagamento PIX -->
+    <div id="modalPix">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Pagamento PIX</h2>
+            <p>Escaneie o QR Code abaixo ou utilize uma das chaves PIX para realizar o pagamento:</p>
+            <!-- Substitua 'path_to_your_qrcode_image.png' pelo caminho do seu QR Code -->
+            <img src="image.jpg" alt="QR Code PIX" style="max-width: 50%; height: auto; margin-bottom: 20px;"/>
+            <table>
+                <tr><th>BANCO</th><th>CHAVE</th></tr>
+                <tr><td>NUBANK</td><td>pgwerneck5@gmail.com</td></tr>
+                <tr><td>ITAU</td><td>11989488507</td></tr>
+                <tr><td>Santander</td><td>49880029852</td></tr>
+            </table>
+        </div>
+    </div>
+
+	<script>
+        // Script para abrir e fechar o modal PIX
+        document.getElementById('pagarBtn').onclick = function() {
+            document.getElementById('modalPix').style.display = 'flex';
+        };
+
+        function closeModal() {
+            document.getElementById('modalPix').style.display = 'none';
+        }
+    </script>
+    </div>
+	<script>
+    window.onload = function() {
+        var itensDeGasto = document.querySelectorAll('.gasto-item .valor');
+        var total = 0;
+
+        itensDeGasto.forEach(function(item) {
+            var valorTexto = item.innerText.replace('R$ ', '').replace(',', '.');
+            var valor = parseFloat(valorTexto);
+            total += valor;
+        });
+
+        document.getElementById('totalGastos').innerText = 'Total: R$ ' + total.toFixed(2).replace('.', ',');
+    };
+</script>
+
+</body>
+</html>

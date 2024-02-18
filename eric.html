@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes de Eric</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #detalhesGastos {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .detalhes-btn {
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        .detalhes-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes dos Gastos de Eric</h1>
+        <p>Deve: R$200</p>
+        <button class="detalhes-btn" onclick="mostrarDetalhes()">Mostrar Detalhes</button>
+        <div id="detalhesGastos">
+            <p>Detalhes: Restaurante e cinema.</p>
+            <a href="index.html" class="btn">Voltar</a>
+        </div>
+    </div>
+    <script>
+function mostrarDetalhes() {
+    var detalhes = document.getElementById('detalhesGastos');
+    // Verifica se o estilo display é 'block', o que indica que já está sendo mostrado
+    if (detalhes.style.display === 'block') {
+        detalhes.style.display = 'none'; // Oculta se já estiver visível
+    } else {
+        detalhes.style.display = 'block'; // Mostra se estiver oculto
+    }
+}
+
+    </script>
+</body>
+</html>

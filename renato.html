@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes de Renato</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .mes {
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .inacessivel {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+        }
+        .acessivel {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .acessivel:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Valores a pagar por Mês - 2024</h1>
+        <div id="meses">
+            <button class="mes inacessivel" disabled>Janeiro</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-fevereiro.html'">Fevereiro</button>
+            <button class="mes acessivel" onclick="window.location.href='renato-marco.html'">Março</button>
+            <button class="mes acessivel" onclick="window.location.href='renato-abril.html'">Abril</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-maio.html'">Maio</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-junho.html'">Junho</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-julho.html'">Julho</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-agosto.html'">Agosto</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-setembro.html'">Setembro</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-outubro.html'">Outubro</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-novembro.html'">Novembro</button>
+            <button class="mes inacessivel" disabled="window.location.href='renato-dezembro.html'">Dezembro</button>
+        </div>
+    </div>
+</body>
+
+</html>
